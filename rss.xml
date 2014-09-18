@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+<channel>
+        <title>Never Mind the Topic</title>
+        <description>Never Mind the Topic - Edwin van Leeuwen</description>
+        <link>http://blackedder.github.io</link>
+        <link>http://blackedder.github.io</link>
+        <lastBuildDate>2014-09-18T17:08:06+01:00</lastBuildDate>
+        <pubDate>2014-09-18T17:08:06+01:00</pubDate>
+        <ttl>1800</ttl>
+
+
+        <item>
+                <title>First post</title>
+                <description>&lt;h2 id=&quot;testing-a-stupid-header&quot;&gt;Testing a stupid header&lt;/h2&gt;
+&lt;p&gt;This is actually a test post. Will disappear at some point.&lt;/p&gt;
+&lt;p&gt;&lt;span class=&quot;math&quot;&gt;\[a+b=\sum x\]&lt;/span&gt;&lt;/p&gt;
+</description>
+                <link>http://blackedder.github.io/2014/09/18/first-post</link>
+                <guid>http://blackedder.github.io/2014/09/18/first-post</guid>
+                <pubDate>2014-09-18T00:00:00+01:00</pubDate>
+        </item>
+
+
+</channel>
+</rss>
