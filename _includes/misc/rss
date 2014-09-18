@@ -1,5 +1,8 @@
-<head>
-    <title>Never Mind the Topic</title>
-    <link rel="alternate" type="application/rss+xml" title="RSS"
-      href="http://blackedder.github.io/rss.xml">
-</head>
+		<title>Never Mind the Topic</title>
+		<link rel="alternate" type="application/rss+xml" title="RSS"
+		href="http://blackedder.github.io/rss.xml">
+
+		<!--- MathJax Configuration -->
+		<script type="text/javascript"
+			src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+		</script>
