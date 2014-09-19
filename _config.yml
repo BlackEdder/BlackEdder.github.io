@@ -17,7 +17,7 @@ pandoc:
 # so be sure to set them if your theme uses them.
 #
 title : Never Mind the Topic 
-tagline: Modelling towards understanding
+tagline: Modelling for fun and profit 
 author :
   name : Edwin van Leeuwen
   email : edder(at)tkwsping(dot)nl
