@@ -5,20 +5,19 @@
         <description>Never Mind the Topic - Edwin van Leeuwen</description>
         <link>http://blackedder.github.io</link>
         <link>http://blackedder.github.io</link>
-        <lastBuildDate>2014-09-18T17:08:06+01:00</lastBuildDate>
-        <pubDate>2014-09-18T17:08:06+01:00</pubDate>
+        <lastBuildDate>2014-09-19T07:45:40+01:00</lastBuildDate>
+        <pubDate>2014-09-19T07:45:40+01:00</pubDate>
         <ttl>1800</ttl>
 
 
         <item>
-                <title>First post</title>
-                <description>&lt;h2 id=&quot;testing-a-stupid-header&quot;&gt;Testing a stupid header&lt;/h2&gt;
-&lt;p&gt;This is actually a test post. Will disappear at some point.&lt;/p&gt;
-&lt;p&gt;&lt;span class=&quot;math&quot;&gt;\[a+b=\sum x\]&lt;/span&gt;&lt;/p&gt;
+                <title>Why did I start this blog?</title>
+                <description>&lt;p&gt;Every so often a discussion erupts on Slashdot discussing the merits of democracy. Part of this discussion always focusses on the two party system and its short comings. As someone from the Netherlands where we have at least 5 viable parties this part of the discussion always fascinated me. Especially now I live in the UK, where there are basically three parties. The main theory for the cause of this difference is a first past the post voting system versus proportional representation.&lt;/p&gt;
+&lt;p&gt;With my background in modelling biological behaviour my natural reaction to hearing theories is to write down a model that captures those theories (weird!). Which started me thinking that it would be interesting to do some modelling and explore the different voting systems in some more depths purely to satisfy my own curiosity, but I could never find the motivation to actually do this. Hopefully having this blog and the imaginary future readers will motivate me to actually move forward.&lt;/p&gt;
 </description>
-                <link>http://blackedder.github.io/2014/09/18/first-post</link>
-                <guid>http://blackedder.github.io/2014/09/18/first-post</guid>
-                <pubDate>2014-09-18T00:00:00+01:00</pubDate>
+                <link>http://blackedder.github.io/2014/09/19/why-did-i-start-this-blog</link>
+                <guid>http://blackedder.github.io/2014/09/19/why-did-i-start-this-blog</guid>
+                <pubDate>2014-09-19T00:00:00+01:00</pubDate>
         </item>
 
 
