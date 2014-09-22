@@ -8,4 +8,5 @@ http://blackedder.github.io/rss.xml
 http://blackedder.github.io/sitemap.txt
 http://blackedder.github.io/tags.html
 
+http://blackedder.github.io/2014/09/22/proportional-representation-vs-first-past-post-voting
 http://blackedder.github.io/2014/09/19/why-did-i-start-this-blog
