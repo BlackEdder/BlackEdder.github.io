@@ -4,7 +4,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Posts</title>
+    <title></title>
     
     <meta name="author" content="Edwin van Leeuwen">
 
@@ -70,8 +70,6 @@
     
   
     
-      
-    
   
     
       
@@ -111,43 +109,92 @@
         
 
 <div class="page-header">
-<h1>Posts <small>Modelling for fun and profit</small></h1>
+<h1> <small>Modelling for fun and profit</small></h1>
 </div>
 
 <div class="row">
-  <div class="span14">
-    <h2 id="proportional-representation-vs-first-past-post-voting">Proportional representation vs First past post voting</h2>
-<h4 id="september-2014">22 September 2014</h4>
+  <div class="span10" align="justify">
+    <h1 id="rational-voting"><a href="/2014/09/27/rational-voting">Rational voting</a></h1>
+<h4 id="september-2014">27 September 2014</h4>
+<p>In the <a href="/2014/09/22/proportional-representation-vs-first-past-post-voting">previous post</a> I gave a quick overview of the long term difference of proportional representation vs first past the post voting systems and I showed that first past the post voting systems result in less viable political parties in the long run. This is the because in first-past-the-post voting only the larger parties have any chance of getting any power. The way I incorporated that in the previous post was a bit of a hack, where I just assumed that this was the case, without any reasoning. Here I will look at why this is indeed the case for any rational voter.</p>
+
+<h2 id="what-does-a-rational-voter-want">What does a rational voter want?</h2>
+
+<figure>
+<img src="/assets/vote_power.png" alt="Black points are the relative number of votes each party gets. Red points the number of votes weighted by the resulting power." /><figcaption>Black points are the relative number of votes each party gets. Red points the number of votes weighted by the resulting power.</figcaption>
+</figure>
+
+<p>Naively one would think that what a voter wants is to vote for the party that most agrees with them, but ultimately a voter is interested in the power balance over all parties. Therefore, a rational voter should vote for the party that brings the balance of power most in line with his/hers viewpoint. This is also why people will vote for parties that wield more power, because those parties’ influence on the balance of power is greater. The easiest way to define the balance of power is the average viewpoint of all parties weighted with their power.</p>
+
+<figure>
+<img src="/assets/post3_voting_history.png" alt="Number of viable parties over time under different voting systems." /><figcaption>Number of viable parties over time under different voting systems.</figcaption>
+</figure>
+
+<p>If we rerun the simulation using this measurement, we again get similar results in that proportional voting supports more parties than first past the post voting. One important factor though is how much people feel their vote is worth. If their vote is not worth much then also with proportional voting you only end up with two parties. Interestingly enough this is because people will only vote the fringe parties. This is because if the political power lies slightly to your right then the best way to influence it is to vote far left, because that will switch average power further to the left than voting for a party closer to you.</p>
+
+<figure>
+<img src="/assets/post3_influence.png" alt="Number of viable parties dependent on the amount of influence a voter thinks he/she has." /><figcaption>Number of viable parties dependent on the amount of influence a voter thinks he/she has.</figcaption>
+</figure>
+
+<p>I have the feeling that this result is an artifact of only using one political axis. With more axes it become more difficult/impossible for this tug of war to happen, so we will have a closer look at this in the next post.</p>
+
+
+
+<p><a href="/2014/09/27/rational-voting">Post a comment</a></p>
+<h1 id="proportional-representation-vs-first-past-post-voting"><a href="/2014/09/22/proportional-representation-vs-first-past-post-voting">Proportional representation vs First past post voting</a></h1>
+<h4 id="september-2014-1">22 September 2014</h4>
 <p>In this post I will explore the different voting systems via simulation. For this we need voters and parties and then we simulate the number of votes each party from election to election. Naively we would expect voters to vote for the party whose viewpoint is the closest to the viewpoint of the voter. For simplicity we will assume here that a viewpoint is basically a simple variable defining their position on the political spectrum (far left to far right). Later we will look more into multidimensional viewpoints.</p>
+
 <h3 id="voting">Voting</h3>
+
 <figure>
 <img src="/assets/one_vote.png" alt="Single round of voting assuming everyone votes for the party that most closely aligns with their own viewpoint. Dots are the relative amount of votes for each party, The line shows the number of people with a certain viewpoint." /><figcaption>Single round of voting assuming everyone votes for the party that most closely aligns with their own viewpoint. Dots are the relative amount of votes for each party, The line shows the number of people with a certain viewpoint.</figcaption>
 </figure>
+
 <p>Here I’ve shown the outcome of one round of voting, where everyone votes for the party whose viewpoint is closest to theirs. Interestingly, one of the biggest parties is on the fringe here, because all the voters that are further to the left vote for that party. This means that even though most voters are central, “fringe” parties can get a relatively large presence because they cater to a wider spectrum of the political landscape.</p>
+
 <h3 id="taking-power-into-account">Taking power into account</h3>
+
 <figure>
 <img src="/assets/power_votes.png" alt="Different possible relationships between relative number of votes of a party and the amount of power a party has" /><figcaption>Different possible relationships between relative number of votes of a party and the amount of power a party has</figcaption>
 </figure>
+
 <p>The previous example assumed that people will actually just vote on the party whose viewpoint is most closely aligned with their own viewpoint. Of course people will also take into account whether the party they vote for has a lot of power/influence. Here is were the difference between the voting systems come in. Illustrated above are some possible scenarios. 1) People’s decision is completely independent of the amount of votes 2) The power of a given party is proportional to the number of votes they received 3) Parties with high number of votes have a disproportionally large amount of power. In a pure first past the post system only the party with the most votes has any power. Here I chose a less extreme form of first past the post. This represents the fact that even if only the largest party has any power, when you vote you will not know which party will end up the larger party. Only that the currently larger parties are more likely to become the largest party after voting.</p>
+
 <h3 id="number-of-parties">Number of parties</h3>
+
 <figure>
 <img src="/assets/weighted_voting_history.png" alt="Simulating the number of parties under each system over time" /><figcaption>Simulating the number of parties under each system over time</figcaption>
 </figure>
+
 <p>If we now simulate the number of parties over a couple of elections we will see that indeed the first past the post system ends up with the least (two) amount of parties. Proportional representation ends up with a higher number of parties. The exact amount of parties is dependent on the mix of parties (and their viewpoints) present at the start.</p>
+
 <h3 id="possible-next-posts">Possible next posts</h3>
+
 <p>In this post I had a quick look at different democratic voting systems and their results for the number of parties present over time. I hope to take a more in depth look over different possible aspects in future posts. Some things I want to look at are:</p>
+
 <ul>
-<li>How should rational people vote? Here I just assumed people would weigh their viewpoint by the amount of influence a party will have. It should be possible though to be more exact in how people would weigh these different factors.</li>
+<li><a href="/2014/09/27/rational-voting">How should rational people vote?</a> Here I just assumed people would weigh their viewpoint by the amount of influence a party will have. It should be possible though to be more exact in how people would weigh these different factors.</li>
 <li>Evolving parties. Parties change their viewpoint over time in response to voters. This should also influence voting behaviour.</li>
 <li>Multidimensional political axes. For simplicity I assumed one political axis here (i.e. left to right wing). In reality the world is not that simple though.</li>
 </ul>
+
+
+
 <p><a href="/2014/09/22/proportional-representation-vs-first-past-post-voting">Post a comment</a></p>
-<h2 id="why-did-i-start-this-blog">Why did I start this blog?</h2>
-<h4 id="september-2014-1">19 September 2014</h4>
+<h1 id="why-did-i-start-this-blog"><a href="/2014/09/19/why-did-i-start-this-blog">Why did I start this blog?</a></h1>
+<h4 id="september-2014-2">19 September 2014</h4>
 <p>Every so often a discussion erupts on Slashdot discussing the merits of democracy. Part of this discussion always focusses on the two party system and its short comings. As someone from the Netherlands where we have at least 5 viable parties this part of the discussion always fascinated me. Especially now I live in the UK, where there are basically three parties. The main theory for the cause of this difference is a first past the post voting system versus proportional representation.</p>
+
 <p>With my background in modelling biological behaviour my natural reaction to hearing theories is to write down a model that captures those theories (weird!). Which started me thinking that it would be interesting to do some modelling and explore the different voting systems in some more depths purely to satisfy my own curiosity, but I could never find the motivation to actually do this. Hopefully having this blog and the imaginary future readers will motivate me to actually move forward.</p>
+
+
+
 <p><a href="/2014/09/19/why-did-i-start-this-blog">Post a comment</a></p>
 
+  </div>
+  <div class="span4">
+		<h1><small>Edwin van Leeuwen</h1>
   </div>
 </div>
 
