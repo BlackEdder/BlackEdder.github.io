@@ -1,0 +1,219 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Rational voting</title>
+    <meta name="description" content="">
+    <meta name="author" content="Edwin van Leeuwen">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le styles -->
+    <link href="/assets/themes/twitter/css/1.4.0/bootstrap.css" rel="stylesheet">
+    <link href="/assets/themes/twitter/css/style.css?body=1" rel="stylesheet" type="text/css" media="all">
+
+    <!-- Le fav and touch icons -->
+  <!-- Update these with your own images
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+  -->
+
+    		<title>Never Mind the Topic</title>
+		<link rel="alternate" type="application/rss+xml" title="RSS"
+		href="http://blackedder.github.io/rss.xml">
+
+		<!--- MathJax Configuration -->
+		<script type="text/javascript"
+			src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+		</script>
+
+  </head>
+
+  <body>
+
+    <div class="topbar">
+      <div class="fill">
+        <div class="container">
+          <a class="brand" href="/">Never Mind the Topic</a>
+          <ul class="nav">
+            
+            
+            
+
+
+  
+    
+      
+      	
+      	<li><a href="/archive.html">Archive</a></li>
+      	
+      
+    
+  
+    
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/categories.html">Categories</a></li>
+      	
+      
+    
+  
+    
+  
+    
+      
+      	
+      	<li><a href="/pages.html">Pages</a></li>
+      	
+      
+    
+  
+    
+      
+    
+  
+    
+      
+    
+  
+    
+      
+      	
+      	<li><a href="/tags.html">Tags</a></li>
+      	
+      
+    
+  
+
+
+
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+
+      <div class="content">
+        
+
+<div class="page-header">
+<h1>Rational voting <small>Modelling for fun and profit </small></h1>
+</div>
+
+<div class="row">
+  <div class="span10" align="justify">
+    <p>In the <a href="/voting/2014/09/22/proportional-representation-vs-first-past-post-voting">previous post</a> I gave a quick overview of the long term difference of proportional representation vs first past the post voting systems and I showed that first past the post voting systems result in less viable political parties in the long run. This is the because in first-past-the-post voting only the larger parties have any chance of getting any power. The way I incorporated that in the previous post was a bit of a hack, where I just assumed that this was the case, without any reasoning. Here I will look at why this is indeed the case for any rational voter.</p>
+<h2 id="what-does-a-rational-voter-want">What does a rational voter want?</h2>
+<figure>
+<img src="/assets/vote_power.png" alt="Black points are the relative number of votes each party gets. Red points the number of votes weighted by the resulting power." /><figcaption>Black points are the relative number of votes each party gets. Red points the number of votes weighted by the resulting power.</figcaption>
+</figure>
+<p>Naively one would think that what a voter wants is to vote for the party that most agrees with them, but ultimately a voter is interested in the power balance over all parties. Therefore, a rational voter should vote for the party that brings the balance of power most in line with his/hers viewpoint. This is also why people will vote for parties that wield more power, because those parties’ influence on the balance of power is greater. The easiest way to define the balance of power is the average viewpoint of all parties weighted with their power.</p>
+<figure>
+<img src="/assets/post3_voting_history.png" alt="Number of viable parties over time under different voting systems." /><figcaption>Number of viable parties over time under different voting systems.</figcaption>
+</figure>
+<p>If we rerun the simulation using this measurement, we again get similar results in that proportional voting supports more parties than first past the post voting. One important factor though is how much people feel their vote is worth. If their vote is not worth much then also with proportional voting you only end up with two parties. Interestingly enough this is because people will only vote the fringe parties. This is because if the political power lies slightly to your right then the best way to influence it is to vote far left, because that will switch average power further to the left than voting for a party closer to you.</p>
+<figure>
+<img src="/assets/post3_influence.png" alt="Number of viable parties dependent on the amount of influence a voter thinks he/she has." /><figcaption>Number of viable parties dependent on the amount of influence a voter thinks he/she has.</figcaption>
+</figure>
+<p>I have the feeling that this result is an artifact of only using one political axis. With more axes it become more difficult/impossible for this tug of war to happen, so we will have a closer look at this in the next post.</p>
+
+    <hr>
+    <div class="pagination">
+      <ul>
+      
+        <li class="prev"><a href="/voting/2014/09/22/proportional-representation-vs-first-past-post-voting" title="Proportional representation vs First past post voting">&larr; Previous</a></li>
+      
+        <li><a href="/archive.html">Archive</a></li>
+      
+        <li class="next"><a href="/programming/2014/10/24/plotting-as-easy-as-logging" title="Plotting as easy as logging">Next &rarr;</a></li>
+      
+      </ul>
+    </div>
+    <hr>
+    
+
+
+  <!-- START: Livefyre Embed -->
+<div id="livefyre-comments"></div>
+<script type="text/javascript" src="http://zor.livefyre.com/wjs/v3.0/javascripts/livefyre.js"></script>
+<script type="text/javascript">
+(function () {
+    var articleId = fyre.conv.load.makeArticleId(null);
+    fyre.conv.load({}, [{
+        el: 'livefyre-comments',
+        network: "livefyre.com",
+        siteId: "364977",
+        articleId: articleId,
+        signed: false,
+        collectionMeta: {
+            articleId: articleId,
+            url: fyre.conv.load.makeCollectionUrl(),
+        }
+    }], function() {});
+}());
+</script>
+<!-- END: Livefyre Embed -->
+
+
+
+
+  </div>
+  
+  <div class="span4">
+    <h4>Published</h4>
+    <div class="date"><span>27 September 2014</span></div>
+
+  
+    <h4>Tags</h4>
+    <ul class="tag_box">
+    
+    
+
+
+  
+     
+    	<li><a href="/tags.html#politics-ref">politics <span>2</span></a></li>
+     
+    	<li><a href="/tags.html#voting-ref">voting <span>2</span></a></li>
+     
+    	<li><a href="/tags.html#proportional representation-ref">proportional representation <span>2</span></a></li>
+     
+    	<li><a href="/tags.html#first past post-ref">first past post <span>2</span></a></li>
+    
+  
+
+
+
+    </ul>
+    
+  </div>
+</div>
+
+
+      </div>
+
+      <footer>
+        <p>&copy; Edwin van Leeuwen 2012 
+          with help from <a href="http://jekyllbootstrap.com" target="_blank" title="The Definitive Jekyll Blogging Framework">Jekyll Bootstrap</a>
+          and <a href="http://twitter.github.com/bootstrap/" target="_blank">Twitter Bootstrap</a>
+        </p>
+      </footer>
+
+    </div> <!-- /container -->
+
+    
+  </body>
+</html>
+

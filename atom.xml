@@ -4,7 +4,7 @@
  <title>Never Mind the Topic</title>
  <link href="http://blackedder.github.io/" rel="self"/>
  <link href="http://blackedder.github.io"/>
- <updated>2014-09-27T15:37:06+01:00</updated>
+ <updated>2014-10-24T15:04:37+01:00</updated>
  <id>http://blackedder.github.io</id>
  <author>
    <name>Edwin van Leeuwen</name>
@@ -13,11 +13,28 @@
 
  
  <entry>
+   <title>Plotting as easy as logging</title>
+   <link href="http://blackedder.github.io/programming/2014/10/24/plotting-as-easy-as-logging"/>
+   <updated>2014-10-24T00:00:00+01:00</updated>
+   <id>http://blackedder.github.io/programming/2014/10/24/plotting-as-easy-as-logging</id>
+   <content type="html">&lt;p&gt;I’ve been frustrated with plotting for a number of years now. I mainly use plotting during simulations and it always feels to me like it should be as easy as logging some numbers to the command line. This frustration first let me to develop &lt;a href=&quot;https://gitorious.org/realtimeplot/&quot;&gt;RealTimePlot&lt;/a&gt;, which is a C++ library that makes it straightforward to plot data with only a couple of lines if code. Still this left me slightly frustrated. Mostly because it was still easier to log some values to the console than to plot them because the console is always there. This was not helped by the fact that I undertook a major refactoring of the code and never finished that.&lt;/p&gt;
+&lt;p&gt;Recently I’ve gotten very interested in the D programming language so naturally I thought about writing another plotting library. This has resulted in &lt;a href=&quot;https://github.com/BlackEdder/plotd&quot;&gt;plotcli&lt;/a&gt;. Plotcli is the result of many years of frustration and I hope to have finally cracked it by adhering to the unix philosophy. Instead of a library, plotcli is a standalone command line program that you feed data into. It will then try to plot this data in a sensible way. You can also provide it with information on the structure of your data either via command line switches or commands in the data file. See the &lt;a href=&quot;https://github.com/BlackEdder/plotd/wiki&quot;&gt;wiki&lt;/a&gt; for some examples.&lt;/p&gt;
+&lt;p&gt;Some pros of using a standalone program vs library:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;On multi core machines you automatically gain parallelism&lt;/li&gt;
+&lt;li&gt;Data is still around, making it easy to (re)plot it in different ways without rerunning the simulation&lt;/li&gt;
+&lt;li&gt;No need to create bindings for different languages&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Plotcli is still in quite early stages of development, but it is shaping up well and bug reports/fixes and feature requests would be highly appreciated.&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
    <title>Rational voting</title>
-   <link href="http://blackedder.github.io/2014/09/27/rational-voting"/>
+   <link href="http://blackedder.github.io/voting/2014/09/27/rational-voting"/>
    <updated>2014-09-27T00:00:00+01:00</updated>
-   <id>http://blackedder.github.io/2014/09/27/rational-voting</id>
-   <content type="html">&lt;p&gt;In the &lt;a href=&quot;/2014/09/22/proportional-representation-vs-first-past-post-voting&quot;&gt;previous post&lt;/a&gt; I gave a quick overview of the long term difference of proportional representation vs first past the post voting systems and I showed that first past the post voting systems result in less viable political parties in the long run. This is the because in first-past-the-post voting only the larger parties have any chance of getting any power. The way I incorporated that in the previous post was a bit of a hack, where I just assumed that this was the case, without any reasoning. Here I will look at why this is indeed the case for any rational voter.&lt;/p&gt;
+   <id>http://blackedder.github.io/voting/2014/09/27/rational-voting</id>
+   <content type="html">&lt;p&gt;In the &lt;a href=&quot;/voting/2014/09/22/proportional-representation-vs-first-past-post-voting&quot;&gt;previous post&lt;/a&gt; I gave a quick overview of the long term difference of proportional representation vs first past the post voting systems and I showed that first past the post voting systems result in less viable political parties in the long run. This is the because in first-past-the-post voting only the larger parties have any chance of getting any power. The way I incorporated that in the previous post was a bit of a hack, where I just assumed that this was the case, without any reasoning. Here I will look at why this is indeed the case for any rational voter.&lt;/p&gt;
 &lt;h2 id=&quot;what-does-a-rational-voter-want&quot;&gt;What does a rational voter want?&lt;/h2&gt;
 &lt;figure&gt;
 &lt;img src=&quot;/assets/vote_power.png&quot; alt=&quot;Black points are the relative number of votes each party gets. Red points the number of votes weighted by the resulting power.&quot; /&gt;&lt;figcaption&gt;Black points are the relative number of votes each party gets. Red points the number of votes weighted by the resulting power.&lt;/figcaption&gt;
@@ -36,9 +53,9 @@
  
  <entry>
    <title>Proportional representation vs First past post voting</title>
-   <link href="http://blackedder.github.io/2014/09/22/proportional-representation-vs-first-past-post-voting"/>
+   <link href="http://blackedder.github.io/voting/2014/09/22/proportional-representation-vs-first-past-post-voting"/>
    <updated>2014-09-22T00:00:00+01:00</updated>
-   <id>http://blackedder.github.io/2014/09/22/proportional-representation-vs-first-past-post-voting</id>
+   <id>http://blackedder.github.io/voting/2014/09/22/proportional-representation-vs-first-past-post-voting</id>
    <content type="html">&lt;p&gt;In this post I will explore the different voting systems via simulation. For this we need voters and parties and then we simulate the number of votes each party from election to election. Naively we would expect voters to vote for the party whose viewpoint is the closest to the viewpoint of the voter. For simplicity we will assume here that a viewpoint is basically a simple variable defining their position on the political spectrum (far left to far right). Later we will look more into multidimensional viewpoints.&lt;/p&gt;
 &lt;h3 id=&quot;voting&quot;&gt;Voting&lt;/h3&gt;
 &lt;figure&gt;
@@ -58,7 +75,7 @@
 &lt;h3 id=&quot;possible-next-posts&quot;&gt;Possible next posts&lt;/h3&gt;
 &lt;p&gt;In this post I had a quick look at different democratic voting systems and their results for the number of parties present over time. I hope to take a more in depth look over different possible aspects in future posts. Some things I want to look at are:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&quot;/2014/09/27/rational-voting&quot;&gt;How should rational people vote?&lt;/a&gt; Here I just assumed people would weigh their viewpoint by the amount of influence a party will have. It should be possible though to be more exact in how people would weigh these different factors.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;/voting/2014/09/27/rational-voting&quot;&gt;How should rational people vote?&lt;/a&gt; Here I just assumed people would weigh their viewpoint by the amount of influence a party will have. It should be possible though to be more exact in how people would weigh these different factors.&lt;/li&gt;
 &lt;li&gt;Evolving parties. Parties change their viewpoint over time in response to voters. This should also influence voting behaviour.&lt;/li&gt;
 &lt;li&gt;Multidimensional political axes. For simplicity I assumed one political axis here (i.e. left to right wing). In reality the world is not that simple though.&lt;/li&gt;
 &lt;/ul&gt;
