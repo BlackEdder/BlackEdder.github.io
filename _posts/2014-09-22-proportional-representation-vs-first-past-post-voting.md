@@ -2,8 +2,8 @@
 layout: post
 title: "Proportional representation vs First past post voting"
 description: ""
-category: 
-tags: []
+category: voting
+tags: [politics,voting,proportional representation,first past post]
 ---
 {% include JB/setup %}
 

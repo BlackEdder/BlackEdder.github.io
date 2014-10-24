@@ -2,8 +2,8 @@
 layout: post
 title: "Rational voting"
 description: ""
-category: 
-tags: []
+category: voting
+tags: [politics,voting,proportional representation,first past post]
 ---
 {% include JB/setup %}
 
