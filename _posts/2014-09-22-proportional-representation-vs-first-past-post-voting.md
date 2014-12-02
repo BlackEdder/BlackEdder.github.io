@@ -33,5 +33,5 @@ In this post I had a quick look at different democratic voting systems and their
 
 - [How should rational people vote?]( {% post_url 2014-09-27-rational-voting %} ) Here I just assumed people would weigh their viewpoint by the amount of influence a party will have. It should be possible though to be more exact in how people would weigh these different factors.
 - Evolving parties. Parties change their viewpoint over time in response to voters. This should also influence voting behaviour.
-- Multidimensional political axes. For simplicity I assumed one political axis here (i.e. left to right wing). In reality the world is not that simple though.
+- [Multidimensional political axes]( {% post_url 2014-12-02-multiple-viewpoint-dimensions %} ). For simplicity I assumed one political axis here (i.e. left to right wing). In reality the world is not that simple though.
 
