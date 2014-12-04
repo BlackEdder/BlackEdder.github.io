@@ -19,4 +19,4 @@ We can also see that the more political axes we assume there are the more sustai
 
 ## Further additions to the model 
 
-I still want to add both parties that can change their viewpoint over time and the possible for new political parties to appear to the model. I think both of those are very important features of a realistic model. After that I can spend one or more posts on looking at the results in more detail.
+I still want to add two things before I consider the model complete. First, parties that can change their viewpoint over time in response to the will of the voters. Second, the possibility for new political parties to appear in the model. I think both of those are very important features of a realistic model. After that I can spend one or more posts on looking at the results in more detail.
