@@ -4,7 +4,7 @@
  <title>Never Mind the Topic</title>
  <link href="http://blackedder.github.io/" rel="self"/>
  <link href="http://blackedder.github.io"/>
- <updated>2014-12-04T07:37:57+00:00</updated>
+ <updated>2014-12-04T07:49:26+00:00</updated>
  <id>http://blackedder.github.io</id>
  <author>
    <name>Edwin van Leeuwen</name>
@@ -14,9 +14,9 @@
  
  <entry>
    <title>Multiple viewpoint dimensions</title>
-   <link href="http://blackedder.github.io/voting/2014/12/03/multiple-viewpoint-dimensions"/>
-   <updated>2014-12-03T00:00:00+00:00</updated>
-   <id>http://blackedder.github.io/voting/2014/12/03/multiple-viewpoint-dimensions</id>
+   <link href="http://blackedder.github.io/voting/2014/12/02/multiple-viewpoint-dimensions"/>
+   <updated>2014-12-02T00:00:00+00:00</updated>
+   <id>http://blackedder.github.io/voting/2014/12/02/multiple-viewpoint-dimensions</id>
    <content type="html">&lt;p&gt;Often political viewpoints are talked about in right-left wing context. In reality voters and parties can rarely be aligned in such a simple (2 dimensional) manner and political viewpoints can be aligned according to many different political axes (&lt;a href=&quot;http://en.wikipedia.org/wiki/Political_spectrum#Other_proposed_dimensions&quot;&gt;multi-axis political model&lt;/a&gt;. The website &lt;a href=&quot;http://www.politicalcompass.org/&quot;&gt;politcalcompass.org&lt;/a&gt; argues for at least two axes: economics and social. In this post we explore the effect of these changes.&lt;/p&gt;
 &lt;figure&gt;
 &lt;img src=&quot;/assets/post4_history.png&quot; alt=&quot;Number of viable parties over time under different voting systems. Viewpoints have 2 different axes&quot; /&gt;&lt;figcaption&gt;Number of viable parties over time under different voting systems. Viewpoints have 2 different axes&lt;/figcaption&gt;
@@ -27,7 +27,7 @@
 &lt;/figure&gt;
 &lt;p&gt;We can also see that the more political axes we assume there are the more sustainable parties proportional voting supports. In contrast, first past the post supports 2 parties almost regardless of the number of axes. You might also notice that the proportional voting on average results in two parties for each political axes.&lt;/p&gt;
 &lt;h2 id=&quot;further-additions-to-the-model&quot;&gt;Further additions to the model&lt;/h2&gt;
-&lt;p&gt;I still want to add both parties that can change their viewpoint over time and the possible for new political parties to appear to the model. I think both of those are very important features of a realistic model. After that I can spend one or more posts on looking at the results in more detail.&lt;/p&gt;
+&lt;p&gt;I still want to add two things before I consider the model complete. First, parties that can change their viewpoint over time in response to the will of the voters. Second, the possibility for new political parties to appear in the model. I think both of those are very important features of a realistic model. After that I can spend one or more posts on looking at the results in more detail.&lt;/p&gt;
 </content>
  </entry>
  
@@ -96,7 +96,7 @@
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;/voting/2014/09/27/rational-voting&quot;&gt;How should rational people vote?&lt;/a&gt; Here I just assumed people would weigh their viewpoint by the amount of influence a party will have. It should be possible though to be more exact in how people would weigh these different factors.&lt;/li&gt;
 &lt;li&gt;Evolving parties. Parties change their viewpoint over time in response to voters. This should also influence voting behaviour.&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;/voting/2014/12/03/multiple-viewpoint-dimensions&quot;&gt;Multidimensional political axes&lt;/a&gt;. For simplicity I assumed one political axis here (i.e. left to right wing). In reality the world is not that simple though.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;/voting/2014/12/02/multiple-viewpoint-dimensions&quot;&gt;Multidimensional political axes&lt;/a&gt;. For simplicity I assumed one political axis here (i.e. left to right wing). In reality the world is not that simple though.&lt;/li&gt;
 &lt;/ul&gt;
 </content>
  </entry>
