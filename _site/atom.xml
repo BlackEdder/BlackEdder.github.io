@@ -4,13 +4,26 @@
  <title>Never Mind the Topic</title>
  <link href="http://blackedder.github.io/" rel="self"/>
  <link href="http://blackedder.github.io"/>
- <updated>2014-12-04T07:50:32+00:00</updated>
+ <updated>2014-12-05T08:18:01+00:00</updated>
  <id>http://blackedder.github.io</id>
  <author>
    <name>Edwin van Leeuwen</name>
    <email>edder(at)tkwsping(dot)nl</email>
  </author>
 
+ 
+ <entry>
+   <title>Piping to a plot</title>
+   <link href="http://blackedder.github.io/programming/2014/12/05/piping-to-a-plot"/>
+   <updated>2014-12-05T00:00:00+00:00</updated>
+   <id>http://blackedder.github.io/programming/2014/12/05/piping-to-a-plot</id>
+   <content type="html">&lt;p&gt;In a &lt;a href=&quot;/programming/2014/10/24/plotting-as-easy-as-logging&quot;&gt;previous post&lt;/a&gt; I talked about an interesting new project I was working on that allowed one to pipe output from another program into a plotting program. The &lt;a href=&quot;https://github.com/BlackEdder/plotd&quot;&gt;plotting&lt;/a&gt; program will interpret the incoming data and plot it to a png file. This allows one to set up a permanent named pipe and listens to that as follows:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;mkfifo /path/to/pipe
+plotcli -f &amp;lt; /path/to/pipe&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;I find this very interesting, because in theory it would mean we can just throw any data at this pipe and have it plot it. Of course there are a number of practical problems with this, that make it not immediately practical. Mainly due to the fact that plots often need a lot of context. I.e. what kind of data is this. How should it be interpreted? Should this data start on a new plot or be part of the previous plot etcetera. Currently with &lt;a href=&quot;https://github.com/BlackEdder/plotd&quot;&gt;plotcli&lt;/a&gt; it is possible to provide this context using plotcli specific messages (i.e. #plotcli -d x,y). This is far from ideal though, because it largely defeats the object of making it very easy to plot any kind of data.&lt;/p&gt;
+&lt;p&gt;I wonder whether there are easier ways of doing this. It is probably possible to make educated guesses about what is meant most of the time. Still it is notoriously difficult to make a system that is both good at interpreting your meaning and easy to extend/improve. I’m open to suggestions :)&lt;/p&gt;
+</content>
+ </entry>
  
  <entry>
    <title>Multiple viewpoint dimensions</title>

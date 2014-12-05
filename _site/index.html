@@ -114,8 +114,16 @@
 
 <div class="row">
   <div class="span10" align="justify">
-    <h1 id="multiple-viewpoint-dimensions"><a href="/voting/2014/12/02/multiple-viewpoint-dimensions">Multiple viewpoint dimensions</a></h1>
-<h4 id="december-2014">02 December 2014</h4>
+    <h1 id="piping-to-a-plot"><a href="/programming/2014/12/05/piping-to-a-plot">Piping to a plot</a></h1>
+<h4 id="december-2014">05 December 2014</h4>
+<p>In a <a href="/programming/2014/10/24/plotting-as-easy-as-logging">previous post</a> I talked about an interesting new project I was working on that allowed one to pipe output from another program into a plotting program. The <a href="https://github.com/BlackEdder/plotd">plotting</a> program will interpret the incoming data and plot it to a png file. This allows one to set up a permanent named pipe and listens to that as follows:</p>
+<pre><code>mkfifo /path/to/pipe
+plotcli -f &lt; /path/to/pipe</code></pre>
+<p>I find this very interesting, because in theory it would mean we can just throw any data at this pipe and have it plot it. Of course there are a number of practical problems with this, that make it not immediately practical. Mainly due to the fact that plots often need a lot of context. I.e. what kind of data is this. How should it be interpreted? Should this data start on a new plot or be part of the previous plot etcetera. Currently with <a href="https://github.com/BlackEdder/plotd">plotcli</a> it is possible to provide this context using plotcli specific messages (i.e. #plotcli -d x,y). This is far from ideal though, because it largely defeats the object of making it very easy to plot any kind of data.</p>
+<p>I wonder whether there are easier ways of doing this. It is probably possible to make educated guesses about what is meant most of the time. Still it is notoriously difficult to make a system that is both good at interpreting your meaning and easy to extend/improve. I’m open to suggestions :)</p>
+<p><a href="/programming/2014/12/05/piping-to-a-plot">Post a comment</a></p>
+<h1 id="multiple-viewpoint-dimensions"><a href="/voting/2014/12/02/multiple-viewpoint-dimensions">Multiple viewpoint dimensions</a></h1>
+<h4 id="december-2014-1">02 December 2014</h4>
 <p>Often political viewpoints are talked about in right-left wing context. In reality voters and parties can rarely be aligned in such a simple (2 dimensional) manner and political viewpoints can be aligned according to many different political axes (<a href="http://en.wikipedia.org/wiki/Political_spectrum#Other_proposed_dimensions">multi-axis political model</a>. The website <a href="http://www.politicalcompass.org/">politcalcompass.org</a> argues for at least two axes: economics and social. In this post we explore the effect of these changes.</p>
 <figure>
 <img src="/assets/post4_history.png" alt="Number of viable parties over time under different voting systems. Viewpoints have 2 different axes" /><figcaption>Number of viable parties over time under different voting systems. Viewpoints have 2 different axes</figcaption>

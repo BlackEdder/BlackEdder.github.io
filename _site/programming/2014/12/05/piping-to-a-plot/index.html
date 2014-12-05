@@ -4,7 +4,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Multiple viewpoint dimensions</title>
+    <title>Piping to a plot</title>
     <meta name="description" content="">
     <meta name="author" content="Edwin van Leeuwen">
 
@@ -109,32 +109,26 @@
         
 
 <div class="page-header">
-<h1>Multiple viewpoint dimensions <small>Modelling for fun and profit </small></h1>
+<h1>Piping to a plot <small>Modelling for fun and profit </small></h1>
 </div>
 
 <div class="row">
   <div class="span10" align="justify">
-    <p>Often political viewpoints are talked about in right-left wing context. In reality voters and parties can rarely be aligned in such a simple (2 dimensional) manner and political viewpoints can be aligned according to many different political axes (<a href="http://en.wikipedia.org/wiki/Political_spectrum#Other_proposed_dimensions">multi-axis political model</a>. The website <a href="http://www.politicalcompass.org/">politcalcompass.org</a> argues for at least two axes: economics and social. In this post we explore the effect of these changes.</p>
-<figure>
-<img src="/assets/post4_history.png" alt="Number of viable parties over time under different voting systems. Viewpoints have 2 different axes" /><figcaption>Number of viable parties over time under different voting systems. Viewpoints have 2 different axes</figcaption>
-</figure>
-<p>Above we show the voting history for a political model that assumes two axes. As shown the first past the post voting system results in 2-4 viable political parties. In contrast the proportional representation voting system results in 4 viable parties.</p>
-<figure>
-<img src="/assets/post4_no_axes.png" alt="Number of viable parties after ten rounds for different number of polical axes." /><figcaption>Number of viable parties after ten rounds for different number of polical axes.</figcaption>
-</figure>
-<p>We can also see that the more political axes we assume there are the more sustainable parties proportional voting supports. In contrast, first past the post supports 2 parties almost regardless of the number of axes. You might also notice that the proportional voting on average results in two parties for each political axes.</p>
-<h2 id="further-additions-to-the-model">Further additions to the model</h2>
-<p>I still want to add two things before I consider the model complete. First, parties that can change their viewpoint over time in response to the will of the voters. Second, the possibility for new political parties to appear in the model. I think both of those are very important features of a realistic model. After that I can spend one or more posts on looking at the results in more detail.</p>
+    <p>In a <a href="/programming/2014/10/24/plotting-as-easy-as-logging">previous post</a> I talked about an interesting new project I was working on that allowed one to pipe output from another program into a plotting program. The <a href="https://github.com/BlackEdder/plotd">plotting</a> program will interpret the incoming data and plot it to a png file. This allows one to set up a permanent named pipe and listens to that as follows:</p>
+<pre><code>mkfifo /path/to/pipe
+plotcli -f &lt; /path/to/pipe</code></pre>
+<p>I find this very interesting, because in theory it would mean we can just throw any data at this pipe and have it plot it. Of course there are a number of practical problems with this, that make it not immediately practical. Mainly due to the fact that plots often need a lot of context. I.e. what kind of data is this. How should it be interpreted? Should this data start on a new plot or be part of the previous plot etcetera. Currently with <a href="https://github.com/BlackEdder/plotd">plotcli</a> it is possible to provide this context using plotcli specific messages (i.e. #plotcli -d x,y). This is far from ideal though, because it largely defeats the object of making it very easy to plot any kind of data.</p>
+<p>I wonder whether there are easier ways of doing this. It is probably possible to make educated guesses about what is meant most of the time. Still it is notoriously difficult to make a system that is both good at interpreting your meaning and easy to extend/improve. I’m open to suggestions :)</p>
 
     <hr>
     <div class="pagination">
       <ul>
       
-        <li class="prev"><a href="/programming/2014/10/24/plotting-as-easy-as-logging" title="Plotting as easy as logging">&larr; Previous</a></li>
+        <li class="prev"><a href="/voting/2014/12/02/multiple-viewpoint-dimensions" title="Multiple viewpoint dimensions">&larr; Previous</a></li>
       
         <li><a href="/archive.html">Archive</a></li>
       
-        <li class="next"><a href="/programming/2014/12/05/piping-to-a-plot" title="Piping to a plot">Next &rarr;</a></li>
+        <li class="next disabled"><a>Next &rarr;</a>
       
       </ul>
     </div>
@@ -170,7 +164,7 @@
   
   <div class="span4">
     <h4>Published</h4>
-    <div class="date"><span>02 December 2014</span></div>
+    <div class="date"><span>05 December 2014</span></div>
 
   
     <h4>Tags</h4>
@@ -181,13 +175,13 @@
 
   
      
-    	<li><a href="/tags.html#politics-ref">politics <span>3</span></a></li>
+    	<li><a href="/tags.html#plotcli-ref">plotcli <span>2</span></a></li>
      
-    	<li><a href="/tags.html#voting-ref">voting <span>3</span></a></li>
+    	<li><a href="/tags.html#dlang-ref">dlang <span>2</span></a></li>
      
-    	<li><a href="/tags.html#proportional representation-ref">proportional representation <span>3</span></a></li>
+    	<li><a href="/tags.html#D-ref">D <span>2</span></a></li>
      
-    	<li><a href="/tags.html#first past post-ref">first past post <span>3</span></a></li>
+    	<li><a href="/tags.html#pipe-ref">pipe <span>1</span></a></li>
     
   
 
