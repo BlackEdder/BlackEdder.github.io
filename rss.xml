@@ -5,10 +5,74 @@
         <description>Never Mind the Topic - Edwin van Leeuwen</description>
         <link>http://blackedder.github.io</link>
         <link>http://blackedder.github.io</link>
-        <lastBuildDate>2014-12-05T08:18:01+00:00</lastBuildDate>
-        <pubDate>2014-12-05T08:18:01+00:00</pubDate>
+        <lastBuildDate>2015-01-19T14:14:27+00:00</lastBuildDate>
+        <pubDate>2015-01-19T14:14:27+00:00</pubDate>
         <ttl>1800</ttl>
 
+
+        <item>
+                <title>Quite Interesting facts about QI scores</title>
+                <description>&lt;p&gt;The game show QI has a very interesting &lt;a href=&quot;http://qi.com/behind-the-scenes/bts-scoring/&quot;&gt;(and well documented)&lt;/a&gt; scoring system, but I’ve always felt QI could easily be “gamed”. For those of you who don’t know QI, it is a popular game show with Stephen Fry and Alan Davies. The whole show revolves around quite interesting facts and doesn’t take itself seriously (it does take the facts seriously though). Because players lose points when they say the wrong thing I have always had the sneaking suspicion that the game could easily be “gamed” by not saying anything, so let’s take a closer look at the scores.&lt;/p&gt;
+&lt;h2 id=&quot;relation-between-scoring-and-talking&quot;&gt;Relation between scoring and talking&lt;/h2&gt;
+&lt;p&gt;First, let’s explore whether saying more really results in lower scores. For this I needed the amount people were talking (represented by total number of characters in their sentences) and their scores. Luckily I found &lt;a href=&quot;http://qitranscripts.com&quot;&gt;this&lt;/a&gt; website with transcripts and &lt;a href=&quot;http://qiscoreboard.com/&quot;&gt;another&lt;/a&gt; website with all QI scores from all the episodes. I am afraid the transcripts only cover the first 8 series though, so I don’t have all the data. If we plot these and perform a linear regression (with R) we get the following picture:&lt;/p&gt;
+&lt;figure&gt;
+&lt;img src=&quot;/assets/post5_regression.png&quot; alt=&quot;Scores as dependent on amount the contestants say. Results from linear regression is shown as a red line&quot; /&gt;&lt;figcaption&gt;Scores as dependent on amount the contestants say. Results from linear regression is shown as a red line&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;p&gt;Although the relationship is fairly weak, it is (statistically) highly significant, showing that saying less and having a higher score are correlated.&lt;/p&gt;
+&lt;div id=&quot;contentBox&quot; class=&quot;clearfix&quot; style=&quot;margin:0px auto; width:100%&quot;&gt;
+&lt;div id=&quot;column1&quot; style=&quot;float:left; margin:0; width:60%;&quot;&gt;
+&lt;p&gt;Next up is my theory that, given that most people score negative points, saying nothing is a winning strategy. For this we only need the data from the scores, so I can use data from all the seasons. The table shows what place you would end up in if you were the silent 5th player. As we can see the percentage of winning is actually quite small (13.8%); most probably you would end up in 2nd or 3rd place. The probability of losing completely is also tiny though, because there have been only a handful of shows where everyone ended up with a positive score. All in all it appears that I was actually wrong. While gaming the system by saying nothing would ensure you wouldn’t end in last place, you would also not win that often. &lt;/div&gt; &lt;div id=&quot;column2&quot; style=&quot;float:left; margin:0; width:10%;&quot;&gt;&lt;/div&gt; &lt;div id=&quot;column5&quot; style=&quot;float:right; margin:0; width:30%;&quot;&gt;&lt;/p&gt;
+&lt;table&gt;
+&lt;colgroup&gt;
+&lt;col style=&quot;width: 9%&quot; /&gt;
+&lt;col style=&quot;width: 18%&quot; /&gt;
+&lt;/colgroup&gt;
+&lt;thead&gt;
+&lt;tr class=&quot;header&quot;&gt;
+&lt;th style=&quot;text-align: left;&quot;&gt;Rank&lt;/th&gt;
+&lt;th style=&quot;text-align: left;&quot;&gt;Silent&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr class=&quot;odd&quot;&gt;
+&lt;td style=&quot;text-align: left;&quot;&gt;&lt;p&gt;1&lt;/p&gt;&lt;/td&gt;
+&lt;td style=&quot;text-align: left;&quot;&gt;&lt;p&gt;13.8%&lt;/p&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&quot;even&quot;&gt;
+&lt;td style=&quot;text-align: left;&quot;&gt;&lt;p&gt;2&lt;/p&gt;&lt;/td&gt;
+&lt;td style=&quot;text-align: left;&quot;&gt;&lt;p&gt;35.2%&lt;/p&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&quot;odd&quot;&gt;
+&lt;td style=&quot;text-align: left;&quot;&gt;&lt;p&gt;3&lt;/p&gt;&lt;/td&gt;
+&lt;td style=&quot;text-align: left;&quot;&gt;&lt;p&gt;35.2%&lt;/p&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&quot;even&quot;&gt;
+&lt;td style=&quot;text-align: left;&quot;&gt;&lt;p&gt;4&lt;/p&gt;&lt;/td&gt;
+&lt;td style=&quot;text-align: left;&quot;&gt;&lt;p&gt;13.1%&lt;/p&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&quot;odd&quot;&gt;
+&lt;td style=&quot;text-align: left;&quot;&gt;&lt;p&gt;5&lt;/p&gt;&lt;/td&gt;
+&lt;td style=&quot;text-align: left;&quot;&gt;&lt;p&gt;2.7%&lt;/p&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;!--Below solves layout issues--&gt;
+&lt;div class=&quot;container&quot;&gt;
+&lt;p&gt;&lt;div class=&quot;row&quot;&gt; &lt;div class=&quot;col-md-4&quot;&gt;&lt;/div&gt; &lt;div class=&quot;col-md-4&quot;&gt;&lt;/div&gt; &lt;div class=&quot;col-md-4&quot;&gt;&lt;/div&gt; &lt;/div&gt; &lt;/div&gt;&lt;/p&gt;
+&lt;h2 id=&quot;alan-davies-permanent-panel-member&quot;&gt;Alan Davies (permanent panel member)&lt;/h2&gt;
+&lt;figure&gt;
+&lt;img src=&quot;/assets/post5_alan.png&quot; /&gt;
+&lt;/figure&gt;
+&lt;p&gt;Finally, lets take a look at Alan’s performance over time. Since Alan is a permanent member we have his scoring data over time. On the left hand side we have his actually scores, with a running average (black line) and the right hand side the running average of the actual position he ended up in (lower is better). From the scores we can see that he started out quite good, then the scores got lower and slowly started rising again from show 40 onward. If we look at his rank every game there seems to be clear improvement over time. The apparent discrepancy of higher scores in the beginning but worse rankings is presumably because all other players also scored higher in the beginning.&lt;/p&gt;
+&lt;p&gt;This leads us to a frightening conclusion: if Alan keeps going like this he might end up winning every week :)&lt;/p&gt;
+&lt;p&gt;Hope you found this short overview quite interesting! If people have suggestion on other possible interesting facts in the data feel free let me know :).&lt;/p&gt;
+</description>
+                <link>http://blackedder.github.io/2015/01/19/quite-interesting-facts-about-qi-scores</link>
+                <guid>http://blackedder.github.io/2015/01/19/quite-interesting-facts-about-qi-scores</guid>
+                <pubDate>2015-01-19T00:00:00+00:00</pubDate>
+        </item>
 
         <item>
                 <title>Piping to a plot</title>
