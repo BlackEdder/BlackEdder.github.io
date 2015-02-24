@@ -114,101 +114,230 @@
 
 <div class="row">
   <div class="span10" align="justify">
-    <h1 id="quite-interesting-facts-about-qi-scores"><a href="/2015/01/19/quite-interesting-facts-about-qi-scores">Quite Interesting facts about QI scores</a></h1>
+    <h1 id="public-transport-planning-and-uncertainty"><a href="/2015/02/24/public-transport-planning-and-uncertainty">Public transport planning and uncertainty</a></h1>
+<h4 id="february-2015">24 February 2015</h4>
+<p>There are a plethora of public transport route planning apps available for every platform. They often do a good job of providing you with the fastest route, and/or with the route with the least stops. There is one feature that I have always missed though and that is an indication of the risk of taking a route. For example if I miss a connection what will my delay be like? Will I be stuck somewhere for at least half an hour? I plan on posting a series of blog posts exploring this question in more detail. Hopefully starting of with some simulation, theory and then applying it to some actual data on public transport.</p>
+
+<h2 id="background">Background</h2>
+
+<p>I live in London and these posts will all be based on the situation in London. London has its own set of public transport and its own particulars. London has three main types of public transport:</p>
+
+<dl>
+<dt>Trains</dt>
+<dd><p>Reasonable regular time intervals. If you miss one you often have to wait for half an hour. Quite often delayed, but mostly a couple of minutes</p>
+</dd>
+<dt>Underground</dt>
+<dd><p>Every 4-8 of minutes, missing one should only delay you for a bit.</p>
+</dd>
+<dt>Bus</dt>
+<dd><p>Every 10-12 minutes. Officially on a schedule, but in London they don’t really follow the schedule. Missing one won’t cost you that much time, but the speed with which you get somewhere is very traffic dependent and so can’t really be counted upon to get you somewhere within a specified amount of time.</p>
+</dd>
+</dl>
+
+<p>As one can see these forms of transport have quite different types of uncertainty associated with them. For example bus and then train is quite risky, because the bus might be unexpectedly delayed due to heavy traffic and then you might miss your train, causing you to have to wait for a long time. In the next blog posts I will try to explore these different situations and hopefully devise a way to take this risk into account when planning your journey.</p>
+
+
+
+<p><a href="/2015/02/24/public-transport-planning-and-uncertainty">Post a comment</a></p>
+<h1 id="quite-interesting-facts-about-qi-scores"><a href="/2015/01/19/quite-interesting-facts-about-qi-scores">Quite Interesting facts about QI scores</a></h1>
 <h4 id="january-2015">19 January 2015</h4>
 <p>The game show QI has a very interesting <a href="http://qi.com/behind-the-scenes/bts-scoring/">(and well documented)</a> scoring system, but I’ve always felt QI could easily be “gamed”. For those of you who don’t know QI, it is a popular game show with Stephen Fry and Alan Davies. The whole show revolves around quite interesting facts and doesn’t take itself seriously (it does take the facts seriously though). Because players lose points when they say the wrong thing I have always had the sneaking suspicion that the game could easily be “gamed” by not saying anything, so let’s take a closer look at the scores.</p>
+
 <h2 id="relation-between-scoring-and-talking">Relation between scoring and talking</h2>
+
 <p>First, let’s explore whether saying more really results in lower scores. For this I needed the amount people were talking (represented by total number of characters in their sentences) and their scores. Luckily I found <a href="http://qitranscripts.com">this</a> website with transcripts and <a href="http://qiscoreboard.com/">another</a> website with all QI scores from all the episodes. I am afraid the transcripts only cover the first 8 series though, so I don’t have all the data. If we plot these and perform a linear regression (with R) we get the following picture:</p>
+
 <figure>
 <img src="/assets/post5_regression.png" alt="Scores as dependent on amount the contestants say. Results from linear regression is shown as a red line" /><figcaption>Scores as dependent on amount the contestants say. Results from linear regression is shown as a red line</figcaption>
 </figure>
+
 <p>Although the relationship is fairly weak, it is (statistically) highly significant, showing that saying less and having a higher score are correlated.</p>
-<div id="contentBox" class="clearfix" style="margin:0px auto; width:100%">
+
+<div id="contentBox" style="margin:0px auto; width:100%" class="clearfix">
 <div id="column1" style="float:left; margin:0; width:60%;">
-<p>
-<p>Next up is my theory that, given that most people score negative points, saying nothing is a winning strategy. For this we only need the data from the scores, so I can use data from all the seasons. The table shows what place you would end up in if you were the silent 5th player. As we can see the percentage of winning is actually quite small (13.8%); most probably you would end up in 2nd or 3rd place. The probability of losing completely is also tiny though, because there have been only a handful of shows where everyone ended up with a positive score. All in all it appears that I was actually wrong. While gaming the system by saying nothing would ensure you wouldn’t end in last place, you would also not win that often. </div> <div id="column2" style="float:left; margin:0; width:10%;"></div> <div id="column5" style="float:right; margin:0; width:30%;"></p> <table> <colgroup> <col style="width: 9%" /> <col style="width: 18%" /> </colgroup> <thead> <tr class="header"> <th style="text-align: left;">Rank</th> <th style="text-align: left;">Silent</th> </tr> </thead> <tbody> <tr class="odd"> <td style="text-align: left;"><p>1</p></td> <td style="text-align: left;"><p>13.8%</p></td> </tr> <tr class="even"> <td style="text-align: left;"><p>2</p></td> <td style="text-align: left;"><p>35.2%</p></td> </tr> <tr class="odd"> <td style="text-align: left;"><p>3</p></td> <td style="text-align: left;"><p>35.2%</p></td> </tr> <tr class="even"> <td style="text-align: left;"><p>4</p></td> <td style="text-align: left;"><p>13.1%</p></td> </tr> <tr class="odd"> <td style="text-align: left;"><p>5</p></td> <td style="text-align: left;"><p>2.7%</p></td> </tr> </tbody> </table> </div> </div> <!--Below solves layout issues--> <div class="container"> <p><div class="row"> <div class="col-md-4"></div> <div class="col-md-4"></div> <div class="col-md-4"></div> </div> </div></p> <h2 id="alan-davies-permanent-panel-member">Alan Davies (permanent panel member)</h2> <figure> <img src="/assets/post5_alan.png" /> </figure> <p>Finally, lets take a look at Alan’s performance over time. Since Alan is a permanent member we have his scoring data over time. On the left hand side we have his actually scores, with a running average (black line) and the right hand side the running average of the actual position he ended up in (lower is better). From the scores we can see that he started out quite good, then the scores got lower and slowly started rising again from show 40 onward. If we look at his rank every game there seems to be clear improvement over time. The apparent discrepancy of higher scores in the beginning but worse rankings is presumably because all other players also scored higher in the beginning.</p> <p>This leads us to a frightening conclusion: if Alan keeps going like this he might end up winning every week :)</p> <p>Hope you found this short overview quite interesting! If people have suggestion on other possible interesting facts in the data feel free let me know :).</p></p>
+Next up is my theory that, given that most people score negative points, saying nothing is a winning strategy. For this we only need the data from the scores, so I can use data from all the seasons. The table shows what place you would end up in if you were the silent 5th player. As we can see the percentage of winning is actually quite small (13.8%); most probably you would end up in 2nd or 3rd place. The probability of losing completely is also tiny though, because there have been only a handful of shows where everyone ended up with a positive score. All in all it appears that I was actually wrong. While gaming the system by saying nothing would ensure you wouldn't end in last place, you would also not win that often. 
+</div>
+<div id="column2" style="float:left; margin:0; width:10%;"></div>
+<div id="column5" style="float:right; margin:0; width:30%;">
+
++------+------------+
+| Rank | Silent |
++======+============+
+| 1    | 13.8%      |
++------+------------+
+| 2    | 35.2%      |
++------+------------+
+| 3    | 35.2%      |
++------+------------+
+| 4    | 13.1%      |
++------+------------+
+| 5    | 2.7%       |
++------+------------+
+
+</div>
+</div>
+
+
+<!--Below solves layout issues-->
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-4"></div>
+    <div class="col-md-4"></div>
+  </div>
+</div>
+
+
+
+<h2 id="alan-davies-permanent-panel-member">Alan Davies (permanent panel member)</h2>
+
+<figure>
+<img src="/assets/post5_alan.png" />
+</figure>
+
+<p>Finally, lets take a look at Alan’s performance over time. Since Alan is a permanent member we have his scoring data over time. On the left hand side we have his actually scores, with a running average (black line) and the right hand side the running average of the actual position he ended up in (lower is better). From the scores we can see that he started out quite good, then the scores got lower and slowly started rising again from show 40 onward. If we look at his rank every game there seems to be clear improvement over time. The apparent discrepancy of higher scores in the beginning but worse rankings is presumably because all other players also scored higher in the beginning.</p>
+
+<p>This leads us to a frightening conclusion: if Alan keeps going like this he might end up winning every week :)</p>
+
+<p>Hope you found this short overview quite interesting! If people have suggestion on other possible interesting facts in the data feel free let me know :).</p>
+
+
+
 <p><a href="/2015/01/19/quite-interesting-facts-about-qi-scores">Post a comment</a></p>
 <h1 id="piping-to-a-plot"><a href="/programming/2014/12/05/piping-to-a-plot">Piping to a plot</a></h1>
 <h4 id="december-2014">05 December 2014</h4>
 <p>In a <a href="/programming/2014/10/24/plotting-as-easy-as-logging">previous post</a> I talked about an interesting new project I was working on that allowed one to pipe output from another program into a plotting program. The <a href="https://github.com/BlackEdder/plotd">plotting</a> program will interpret the incoming data and plot it to a png file. This allows one to set up a permanent named pipe and listens to that as follows:</p>
+
 <pre><code>mkfifo /path/to/pipe
 plotcli -f &lt; /path/to/pipe</code></pre>
+
 <p>I find this very interesting, because in theory it would mean we can just throw any data at this pipe and have it plot it. Of course there are a number of practical problems with this, that make it not immediately practical. Mainly due to the fact that plots often need a lot of context. I.e. what kind of data is this. How should it be interpreted? Should this data start on a new plot or be part of the previous plot etcetera. Currently with <a href="https://github.com/BlackEdder/plotd">plotcli</a> it is possible to provide this context using plotcli specific messages (i.e. #plotcli -d x,y). This is far from ideal though, because it largely defeats the object of making it very easy to plot any kind of data.</p>
+
 <p>I wonder whether there are easier ways of doing this. It is probably possible to make educated guesses about what is meant most of the time. Still it is notoriously difficult to make a system that is both good at interpreting your meaning and easy to extend/improve. I’m open to suggestions :)</p>
+
+
+
 <p><a href="/programming/2014/12/05/piping-to-a-plot">Post a comment</a></p>
 <h1 id="multiple-viewpoint-dimensions"><a href="/voting/2014/12/02/multiple-viewpoint-dimensions">Multiple viewpoint dimensions</a></h1>
 <h4 id="december-2014-1">02 December 2014</h4>
 <p>Often political viewpoints are talked about in right-left wing context. In reality voters and parties can rarely be aligned in such a simple (2 dimensional) manner and political viewpoints can be aligned according to many different political axes (<a href="http://en.wikipedia.org/wiki/Political_spectrum#Other_proposed_dimensions">multi-axis political model</a>. The website <a href="http://www.politicalcompass.org/">politcalcompass.org</a> argues for at least two axes: economics and social. In this post we explore the effect of these changes.</p>
+
 <figure>
 <img src="/assets/post4_history.png" alt="Number of viable parties over time under different voting systems. Viewpoints have 2 different axes" /><figcaption>Number of viable parties over time under different voting systems. Viewpoints have 2 different axes</figcaption>
 </figure>
+
 <p>Above we show the voting history for a political model that assumes two axes. As shown the first past the post voting system results in 2-4 viable political parties. In contrast the proportional representation voting system results in 4 viable parties.</p>
+
 <figure>
 <img src="/assets/post4_no_axes.png" alt="Number of viable parties after ten rounds for different number of polical axes." /><figcaption>Number of viable parties after ten rounds for different number of polical axes.</figcaption>
 </figure>
+
 <p>We can also see that the more political axes we assume there are the more sustainable parties proportional voting supports. In contrast, first past the post supports 2 parties almost regardless of the number of axes. You might also notice that the proportional voting on average results in two parties for each political axes.</p>
+
 <h2 id="further-additions-to-the-model">Further additions to the model</h2>
+
 <p>I still want to add two things before I consider the model complete. First, parties that can change their viewpoint over time in response to the will of the voters. Second, the possibility for new political parties to appear in the model. I think both of those are very important features of a realistic model. After that I can spend one or more posts on looking at the results in more detail.</p>
+
+
+
 <p><a href="/voting/2014/12/02/multiple-viewpoint-dimensions">Post a comment</a></p>
 <h1 id="plotting-as-easy-as-logging"><a href="/programming/2014/10/24/plotting-as-easy-as-logging">Plotting as easy as logging</a></h1>
 <h4 id="october-2014">24 October 2014</h4>
 <p>I’ve been frustrated with plotting for a number of years now. I mainly use plotting during simulations and it always feels to me like it should be as easy as logging some numbers to the command line. This frustration first let me to develop <a href="https://gitorious.org/realtimeplot/">RealTimePlot</a>, which is a C++ library that makes it straightforward to plot data with only a couple of lines if code. Still this left me slightly frustrated. Mostly because it was still easier to log some values to the console than to plot them because the console is always there. This was not helped by the fact that I undertook a major refactoring of the code and never finished that.</p>
+
 <p>Recently I’ve gotten very interested in the D programming language so naturally I thought about writing another plotting library. This has resulted in <a href="https://github.com/BlackEdder/plotd">plotcli</a>. Plotcli is the result of many years of frustration and I hope to have finally cracked it by adhering to the unix philosophy. Instead of a library, plotcli is a standalone command line program that you feed data into. It will then try to plot this data in a sensible way. You can also provide it with information on the structure of your data either via command line switches or commands in the data file. See the <a href="https://github.com/BlackEdder/plotd/wiki">wiki</a> for some examples.</p>
+
 <p>Some pros of using a standalone program vs library:</p>
+
 <ul>
 <li>On multi core machines you automatically gain parallelism</li>
 <li>Data is still around, making it easy to (re)plot it in different ways without rerunning the simulation</li>
 <li>No need to create bindings for different languages</li>
 </ul>
+
 <p>Plotcli is still in quite early stages of development, but it is shaping up well and bug reports/fixes and feature requests would be highly appreciated.</p>
+
+
+
 <p><a href="/programming/2014/10/24/plotting-as-easy-as-logging">Post a comment</a></p>
 <h1 id="rational-voting"><a href="/voting/2014/09/27/rational-voting">Rational voting</a></h1>
 <h4 id="september-2014">27 September 2014</h4>
 <p>In the <a href="/voting/2014/09/22/proportional-representation-vs-first-past-post-voting">previous post</a> I gave a quick overview of the long term difference of proportional representation vs first past the post voting systems and I showed that first past the post voting systems result in less viable political parties in the long run. This is the because in first-past-the-post voting only the larger parties have any chance of getting any power. The way I incorporated that in the previous post was a bit of a hack, where I just assumed that this was the case, without any reasoning. Here I will look at why this is indeed the case for any rational voter.</p>
+
 <h2 id="what-does-a-rational-voter-want">What does a rational voter want?</h2>
+
 <figure>
 <img src="/assets/vote_power.png" alt="Black points are the relative number of votes each party gets. Red points the number of votes weighted by the resulting power." /><figcaption>Black points are the relative number of votes each party gets. Red points the number of votes weighted by the resulting power.</figcaption>
 </figure>
+
 <p>Naively one would think that what a voter wants is to vote for the party that most agrees with them, but ultimately a voter is interested in the power balance over all parties. Therefore, a rational voter should vote for the party that brings the balance of power most in line with his/hers viewpoint. This is also why people will vote for parties that wield more power, because those parties’ influence on the balance of power is greater. The easiest way to define the balance of power is the average viewpoint of all parties weighted with their power.</p>
+
 <figure>
 <img src="/assets/post3_voting_history.png" alt="Number of viable parties over time under different voting systems." /><figcaption>Number of viable parties over time under different voting systems.</figcaption>
 </figure>
+
 <p>If we rerun the simulation using this measurement, we again get similar results in that proportional voting supports more parties than first past the post voting. One important factor though is how much people feel their vote is worth. If their vote is not worth much then also with proportional voting you only end up with two parties. Interestingly enough this is because people will only vote the fringe parties. This is because if the political power lies slightly to your right then the best way to influence it is to vote far left, because that will switch average power further to the left than voting for a party closer to you.</p>
+
 <figure>
 <img src="/assets/post3_influence.png" alt="Number of viable parties dependent on the amount of influence a voter thinks he/she has." /><figcaption>Number of viable parties dependent on the amount of influence a voter thinks he/she has.</figcaption>
 </figure>
+
 <p>I have the feeling that this result is an artifact of only using one political axis. With more axes it become more difficult/impossible for this tug of war to happen, so we will have a closer look at this in the next post.</p>
+
+
+
 <p><a href="/voting/2014/09/27/rational-voting">Post a comment</a></p>
 <h1 id="proportional-representation-vs-first-past-post-voting"><a href="/voting/2014/09/22/proportional-representation-vs-first-past-post-voting">Proportional representation vs First past post voting</a></h1>
 <h4 id="september-2014-1">22 September 2014</h4>
 <p>In this post I will explore the different voting systems via simulation. For this we need voters and parties and then we simulate the number of votes each party from election to election. Naively we would expect voters to vote for the party whose viewpoint is the closest to the viewpoint of the voter. For simplicity we will assume here that a viewpoint is basically a simple variable defining their position on the political spectrum (far left to far right). Later we will look more into multidimensional viewpoints.</p>
+
 <h3 id="voting">Voting</h3>
+
 <figure>
 <img src="/assets/one_vote.png" alt="Single round of voting assuming everyone votes for the party that most closely aligns with their own viewpoint. Dots are the relative amount of votes for each party, The line shows the number of people with a certain viewpoint." /><figcaption>Single round of voting assuming everyone votes for the party that most closely aligns with their own viewpoint. Dots are the relative amount of votes for each party, The line shows the number of people with a certain viewpoint.</figcaption>
 </figure>
+
 <p>Here I’ve shown the outcome of one round of voting, where everyone votes for the party whose viewpoint is closest to theirs. Interestingly, one of the biggest parties is on the fringe here, because all the voters that are further to the left vote for that party. This means that even though most voters are central, “fringe” parties can get a relatively large presence because they cater to a wider spectrum of the political landscape.</p>
+
 <h3 id="taking-power-into-account">Taking power into account</h3>
+
 <figure>
 <img src="/assets/power_votes.png" alt="Different possible relationships between relative number of votes of a party and the amount of power a party has" /><figcaption>Different possible relationships between relative number of votes of a party and the amount of power a party has</figcaption>
 </figure>
+
 <p>The previous example assumed that people will actually just vote on the party whose viewpoint is most closely aligned with their own viewpoint. Of course people will also take into account whether the party they vote for has a lot of power/influence. Here is were the difference between the voting systems come in. Illustrated above are some possible scenarios. 1) People’s decision is completely independent of the amount of votes 2) The power of a given party is proportional to the number of votes they received 3) Parties with high number of votes have a disproportionally large amount of power. In a pure first past the post system only the party with the most votes has any power. Here I chose a less extreme form of first past the post. This represents the fact that even if only the largest party has any power, when you vote you will not know which party will end up the larger party. Only that the currently larger parties are more likely to become the largest party after voting.</p>
+
 <h3 id="number-of-parties">Number of parties</h3>
+
 <figure>
 <img src="/assets/weighted_voting_history.png" alt="Simulating the number of parties under each system over time" /><figcaption>Simulating the number of parties under each system over time</figcaption>
 </figure>
+
 <p>If we now simulate the number of parties over a couple of elections we will see that indeed the first past the post system ends up with the least (two) amount of parties. Proportional representation ends up with a higher number of parties. The exact amount of parties is dependent on the mix of parties (and their viewpoints) present at the start.</p>
+
 <h3 id="possible-next-posts">Possible next posts</h3>
+
 <p>In this post I had a quick look at different democratic voting systems and their results for the number of parties present over time. I hope to take a more in depth look over different possible aspects in future posts. Some things I want to look at are:</p>
+
 <ul>
 <li><a href="/voting/2014/09/27/rational-voting">How should rational people vote?</a> Here I just assumed people would weigh their viewpoint by the amount of influence a party will have. It should be possible though to be more exact in how people would weigh these different factors.</li>
 <li>Evolving parties. Parties change their viewpoint over time in response to voters. This should also influence voting behaviour.</li>
 <li><a href="/voting/2014/12/02/multiple-viewpoint-dimensions">Multidimensional political axes</a>. For simplicity I assumed one political axis here (i.e. left to right wing). In reality the world is not that simple though.</li>
 </ul>
+
+
+
 <p><a href="/voting/2014/09/22/proportional-representation-vs-first-past-post-voting">Post a comment</a></p>
 <h1 id="why-did-i-start-this-blog"><a href="/2014/09/19/why-did-i-start-this-blog">Why did I start this blog?</a></h1>
 <h4 id="september-2014-2">19 September 2014</h4>
 <p>Every so often a discussion erupts on Slashdot discussing the merits of democracy. Part of this discussion always focusses on the two party system and its short comings. As someone from the Netherlands where we have at least 5 viable parties this part of the discussion always fascinated me. Especially now I live in the UK, where there are basically three parties. The main theory for the cause of this difference is a first past the post voting system versus proportional representation.</p>
+
 <p>With my background in modelling biological behaviour my natural reaction to hearing theories is to write down a model that captures those theories (weird!). Which started me thinking that it would be interesting to do some modelling and explore the different voting systems in some more depths purely to satisfy my own curiosity, but I could never find the motivation to actually do this. Hopefully having this blog and the imaginary future readers will motivate me to actually move forward.</p>
+
+
+
 <p><a href="/2014/09/19/why-did-i-start-this-blog">Post a comment</a></p>
 
   </div>

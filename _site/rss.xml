@@ -5,10 +5,33 @@
         <description>Never Mind the Topic - Edwin van Leeuwen</description>
         <link>http://blackedder.github.io</link>
         <link>http://blackedder.github.io</link>
-        <lastBuildDate>2015-01-19T14:17:08+00:00</lastBuildDate>
-        <pubDate>2015-01-19T14:17:08+00:00</pubDate>
+        <lastBuildDate>2015-02-24T09:07:57+00:00</lastBuildDate>
+        <pubDate>2015-02-24T09:07:57+00:00</pubDate>
         <ttl>1800</ttl>
 
+
+        <item>
+                <title>Public transport planning and uncertainty</title>
+                <description>&lt;p&gt;There are a plethora of public transport route planning apps available for every platform. They often do a good job of providing you with the fastest route, and/or with the route with the least stops. There is one feature that I have always missed though and that is an indication of the risk of taking a route. For example if I miss a connection what will my delay be like? Will I be stuck somewhere for at least half an hour? I plan on posting a series of blog posts exploring this question in more detail. Hopefully starting of with some simulation, theory and then applying it to some actual data on public transport.&lt;/p&gt;
+&lt;h2 id=&quot;background&quot;&gt;Background&lt;/h2&gt;
+&lt;p&gt;I live in London and these posts will all be based on the situation in London. London has its own set of public transport and its own particulars. London has three main types of public transport:&lt;/p&gt;
+&lt;dl&gt;
+&lt;dt&gt;Trains&lt;/dt&gt;
+&lt;dd&gt;&lt;p&gt;Reasonable regular time intervals. If you miss one you often have to wait for half an hour. Quite often delayed, but mostly a couple of minutes&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt&gt;Underground&lt;/dt&gt;
+&lt;dd&gt;&lt;p&gt;Every 4-8 of minutes, missing one should only delay you for a bit.&lt;/p&gt;
+&lt;/dd&gt;
+&lt;dt&gt;Bus&lt;/dt&gt;
+&lt;dd&gt;&lt;p&gt;Every 10-12 minutes. Officially on a schedule, but in London they don’t really follow the schedule. Missing one won’t cost you that much time, but the speed with which you get somewhere is very traffic dependent and so can’t really be counted upon to get you somewhere within a specified amount of time.&lt;/p&gt;
+&lt;/dd&gt;
+&lt;/dl&gt;
+&lt;p&gt;As one can see these forms of transport have quite different types of uncertainty associated with them. For example bus and then train is quite risky, because the bus might be unexpectedly delayed due to heavy traffic and then you might miss your train, causing you to have to wait for a long time. In the next blog posts I will try to explore these different situations and hopefully devise a way to take this risk into account when planning your journey.&lt;/p&gt;
+</description>
+                <link>http://blackedder.github.io/2015/02/24/public-transport-planning-and-uncertainty</link>
+                <guid>http://blackedder.github.io/2015/02/24/public-transport-planning-and-uncertainty</guid>
+                <pubDate>2015-02-24T00:00:00+00:00</pubDate>
+        </item>
 
         <item>
                 <title>Quite Interesting facts about QI scores</title>
@@ -19,48 +42,41 @@
 &lt;img src=&quot;/assets/post5_regression.png&quot; alt=&quot;Scores as dependent on amount the contestants say. Results from linear regression is shown as a red line&quot; /&gt;&lt;figcaption&gt;Scores as dependent on amount the contestants say. Results from linear regression is shown as a red line&lt;/figcaption&gt;
 &lt;/figure&gt;
 &lt;p&gt;Although the relationship is fairly weak, it is (statistically) highly significant, showing that saying less and having a higher score are correlated.&lt;/p&gt;
-&lt;div id=&quot;contentBox&quot; class=&quot;clearfix&quot; style=&quot;margin:0px auto; width:100%&quot;&gt;
+&lt;div id=&quot;contentBox&quot; style=&quot;margin:0px auto; width:100%&quot; class=&quot;clearfix&quot;&gt;
 &lt;div id=&quot;column1&quot; style=&quot;float:left; margin:0; width:60%;&quot;&gt;
-&lt;p&gt;Next up is my theory that, given that most people score negative points, saying nothing is a winning strategy. For this we only need the data from the scores, so I can use data from all the seasons. The table shows what place you would end up in if you were the silent 5th player. As we can see the percentage of winning is actually quite small (13.8%); most probably you would end up in 2nd or 3rd place. The probability of losing completely is also tiny though, because there have been only a handful of shows where everyone ended up with a positive score. All in all it appears that I was actually wrong. While gaming the system by saying nothing would ensure you wouldn’t end in last place, you would also not win that often. &lt;/div&gt; &lt;div id=&quot;column2&quot; style=&quot;float:left; margin:0; width:10%;&quot;&gt;&lt;/div&gt; &lt;div id=&quot;column5&quot; style=&quot;float:right; margin:0; width:30%;&quot;&gt;&lt;/p&gt;
-&lt;table&gt;
-&lt;colgroup&gt;
-&lt;col style=&quot;width: 9%&quot; /&gt;
-&lt;col style=&quot;width: 18%&quot; /&gt;
-&lt;/colgroup&gt;
-&lt;thead&gt;
-&lt;tr class=&quot;header&quot;&gt;
-&lt;th style=&quot;text-align: left;&quot;&gt;Rank&lt;/th&gt;
-&lt;th style=&quot;text-align: left;&quot;&gt;Silent&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr class=&quot;odd&quot;&gt;
-&lt;td style=&quot;text-align: left;&quot;&gt;&lt;p&gt;1&lt;/p&gt;&lt;/td&gt;
-&lt;td style=&quot;text-align: left;&quot;&gt;&lt;p&gt;13.8%&lt;/p&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr class=&quot;even&quot;&gt;
-&lt;td style=&quot;text-align: left;&quot;&gt;&lt;p&gt;2&lt;/p&gt;&lt;/td&gt;
-&lt;td style=&quot;text-align: left;&quot;&gt;&lt;p&gt;35.2%&lt;/p&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr class=&quot;odd&quot;&gt;
-&lt;td style=&quot;text-align: left;&quot;&gt;&lt;p&gt;3&lt;/p&gt;&lt;/td&gt;
-&lt;td style=&quot;text-align: left;&quot;&gt;&lt;p&gt;35.2%&lt;/p&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr class=&quot;even&quot;&gt;
-&lt;td style=&quot;text-align: left;&quot;&gt;&lt;p&gt;4&lt;/p&gt;&lt;/td&gt;
-&lt;td style=&quot;text-align: left;&quot;&gt;&lt;p&gt;13.1%&lt;/p&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr class=&quot;odd&quot;&gt;
-&lt;td style=&quot;text-align: left;&quot;&gt;&lt;p&gt;5&lt;/p&gt;&lt;/td&gt;
-&lt;td style=&quot;text-align: left;&quot;&gt;&lt;p&gt;2.7%&lt;/p&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
+Next up is my theory that, given that most people score negative points, saying nothing is a winning strategy. For this we only need the data from the scores, so I can use data from all the seasons. The table shows what place you would end up in if you were the silent 5th player. As we can see the percentage of winning is actually quite small (13.8%); most probably you would end up in 2nd or 3rd place. The probability of losing completely is also tiny though, because there have been only a handful of shows where everyone ended up with a positive score. All in all it appears that I was actually wrong. While gaming the system by saying nothing would ensure you wouldn&#39;t end in last place, you would also not win that often. 
+&lt;/div&gt;
+&lt;div id=&quot;column2&quot; style=&quot;float:left; margin:0; width:10%;&quot;&gt;&lt;/div&gt;
+&lt;div id=&quot;column5&quot; style=&quot;float:right; margin:0; width:30%;&quot;&gt;
+
++------+------------+
+| Rank | Silent |
++======+============+
+| 1    | 13.8%      |
++------+------------+
+| 2    | 35.2%      |
++------+------------+
+| 3    | 35.2%      |
++------+------------+
+| 4    | 13.1%      |
++------+------------+
+| 5    | 2.7%       |
++------+------------+
+
 &lt;/div&gt;
 &lt;/div&gt;
+
 &lt;!--Below solves layout issues--&gt;
+
 &lt;div class=&quot;container&quot;&gt;
-&lt;p&gt;&lt;div class=&quot;row&quot;&gt; &lt;div class=&quot;col-md-4&quot;&gt;&lt;/div&gt; &lt;div class=&quot;col-md-4&quot;&gt;&lt;/div&gt; &lt;div class=&quot;col-md-4&quot;&gt;&lt;/div&gt; &lt;/div&gt; &lt;/div&gt;&lt;/p&gt;
+  &lt;div class=&quot;row&quot;&gt;
+    &lt;div class=&quot;col-md-4&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;col-md-4&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;col-md-4&quot;&gt;&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+
+
 &lt;h2 id=&quot;alan-davies-permanent-panel-member&quot;&gt;Alan Davies (permanent panel member)&lt;/h2&gt;
 &lt;figure&gt;
 &lt;img src=&quot;/assets/post5_alan.png&quot; /&gt;

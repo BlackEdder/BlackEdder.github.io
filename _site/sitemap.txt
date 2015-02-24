@@ -8,6 +8,7 @@ http://blackedder.github.io/rss.xml
 http://blackedder.github.io/sitemap.txt
 http://blackedder.github.io/tags.html
 
+http://blackedder.github.io/2015/02/24/public-transport-planning-and-uncertainty
 http://blackedder.github.io/2015/01/19/quite-interesting-facts-about-qi-scores
 http://blackedder.github.io/programming/2014/12/05/piping-to-a-plot
 http://blackedder.github.io/voting/2014/12/02/multiple-viewpoint-dimensions
