@@ -4,7 +4,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Public transport planning and uncertainty</title>
+    <title>Typical public transport times</title>
     <meta name="description" content="">
     <meta name="author" content="Edwin van Leeuwen">
 
@@ -109,36 +109,26 @@
         
 
 <div class="page-header">
-<h1>Public transport planning and uncertainty <small>Modelling for fun and profit </small></h1>
+<h1>Typical public transport times <small>Modelling for fun and profit </small></h1>
 </div>
 
 <div class="row">
   <div class="span10" align="justify">
-    <p>There are a plethora of public transport route planning apps available for every platform. They often do a good job of providing you with the fastest route, and/or with the route with the least stops. There is one feature that I have always missed though and that is an indication of the risk of taking a route. For example if I miss a connection what will my delay be like? Will I be stuck somewhere for at least half an hour? I plan on posting a series of blog posts exploring this question in more detail. Hopefully starting of with some simulation, theory and then applying it to some actual data on public transport.</p>
-<h2 id="background">Background</h2>
-<p>I live in London and these posts will all be based on the situation in London. London has its own set of public transport and its own particulars. London has three main types of public transport:</p>
-<dl>
-<dt>Trains</dt>
-<dd><p>Reasonable regular time intervals. If you miss one you often have to wait for half an hour. Quite often delayed, but mostly a couple of minutes</p>
-</dd>
-<dt>Underground</dt>
-<dd><p>Every 4-8 of minutes, missing one should only delay you for a bit.</p>
-</dd>
-<dt>Bus</dt>
-<dd><p>Every 10-12 minutes. Officially on a schedule, but in London they don’t really follow the schedule. Missing one won’t cost you that much time, but the speed with which you get somewhere is very traffic dependent and so can’t really be counted upon to get you somewhere within a specified amount of time.</p>
-</dd>
-</dl>
-<p>As one can see these forms of transport have quite different types of uncertainty associated with them. For example bus and then train is quite risky, because the bus might be unexpectedly delayed due to heavy traffic and then you might miss your train, causing you to have to wait for a long time. In the next blog posts I will try to explore these different situations and hopefully devise a way to take this risk into account when planning your journey.</p>
+    <p>As mentioned in the <a href="/2015/02/24/public-transport-planning-and-uncertainty">previous post</a> I wanted to spend some time exploring the different trade offs involved with chosing a route by public transport (in London). In that post I highlighted the differences in expected time of arrival, travel time and uncertainty around those times for the train, underground and bus. I have now performed some simulations combining the modes of transports to explore how these differences influence your total travel time.</p>
+<figure>
+<img src="/assets/ov_time_examples.svg" alt="Combined transit times of different forms of transport. On the x axis are different combinations, with the 1st row the first type of transport and 2nd the following transport. Y axis gives an overview of the median travel time and the variance around the travel time, with the box indicating the first to third quartile of the data. The lines are the 2 and 98 percent confidence levels." /><figcaption>Combined transit times of different forms of transport. On the x axis are different combinations, with the 1st row the first type of transport and 2nd the following transport. Y axis gives an overview of the median travel time and the variance around the travel time, with the box indicating the first to third quartile of the data. The lines are the 2 and 98 percent confidence levels.</figcaption>
+</figure>
+<p>Looking at the figure the most interesting part is the difference in uncertainty. Clearly taking the tube is the most reliable way to get there in a certain time. Bus bus can be faster, but can also be much slower. As a result when choosing a route it is not only important to consider the average time it will take, but also the associated risk of being delayed.</p>
 
     <hr>
     <div class="pagination">
       <ul>
       
-        <li class="prev"><a href="/2015/01/19/quite-interesting-facts-about-qi-scores" title="Quite Interesting facts about QI scores">&larr; Previous</a></li>
+        <li class="prev"><a href="/2015/02/24/public-transport-planning-and-uncertainty" title="Public transport planning and uncertainty">&larr; Previous</a></li>
       
         <li><a href="/archive.html">Archive</a></li>
       
-        <li class="next"><a href="/2015/03/13/typical-public-transport-times" title="Typical public transport times">Next &rarr;</a></li>
+        <li class="next disabled"><a>Next &rarr;</a>
       
       </ul>
     </div>
@@ -174,7 +164,7 @@
   
   <div class="span4">
     <h4>Published</h4>
-    <div class="date"><span>24 February 2015</span></div>
+    <div class="date"><span>13 March 2015</span></div>
 
   
     <h4>Tags</h4>

@@ -114,7 +114,20 @@
 
 <div class="row">
   <div class="span10" align="justify">
-    <h1 id="public-transport-planning-and-uncertainty"><a href="/2015/02/24/public-transport-planning-and-uncertainty">Public transport planning and uncertainty</a></h1>
+    <h1 id="typical-public-transport-times"><a href="/2015/03/13/typical-public-transport-times">Typical public transport times</a></h1>
+<h4 id="march-2015">13 March 2015</h4>
+<p>As mentioned in the <a href="/2015/02/24/public-transport-planning-and-uncertainty">previous post</a> I wanted to spend some time exploring the different trade offs involved with chosing a route by public transport (in London). In that post I highlighted the differences in expected time of arrival, travel time and uncertainty around those times for the train, underground and bus. I have now performed some simulations combining the modes of transports to explore how these differences influence your total travel time.</p>
+
+<figure>
+<img src="/assets/ov_time_examples.svg" alt="Combined transit times of different forms of transport. On the x axis are different combinations, with the 1st row the first type of transport and 2nd the following transport. Y axis gives an overview of the median travel time and the variance around the travel time, with the box indicating the first to third quartile of the data. The lines are the 2 and 98 percent confidence levels." /><figcaption>Combined transit times of different forms of transport. On the x axis are different combinations, with the 1st row the first type of transport and 2nd the following transport. Y axis gives an overview of the median travel time and the variance around the travel time, with the box indicating the first to third quartile of the data. The lines are the 2 and 98 percent confidence levels.</figcaption>
+</figure>
+
+<p>Looking at the figure the most interesting part is the difference in uncertainty. Clearly taking the tube is the most reliable way to get there in a certain time. Bus bus can be faster, but can also be much slower. As a result when choosing a route it is not only important to consider the average time it will take, but also the associated risk of being delayed.</p>
+
+
+
+<p><a href="/2015/03/13/typical-public-transport-times">Post a comment</a></p>
+<h1 id="public-transport-planning-and-uncertainty"><a href="/2015/02/24/public-transport-planning-and-uncertainty">Public transport planning and uncertainty</a></h1>
 <h4 id="february-2015">24 February 2015</h4>
 <p>There are a plethora of public transport route planning apps available for every platform. They often do a good job of providing you with the fastest route, and/or with the route with the least stops. There is one feature that I have always missed though and that is an indication of the risk of taking a route. For example if I miss a connection what will my delay be like? Will I be stuck somewhere for at least half an hour? I plan on posting a series of blog posts exploring this question in more detail. Hopefully starting of with some simulation, theory and then applying it to some actual data on public transport.</p>
 
